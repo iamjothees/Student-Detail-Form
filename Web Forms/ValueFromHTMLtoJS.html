@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    <head>
+        <title>Value from HTML to JS</title>
+        <link rel="stylesheet" href="Forms.css">
+    </head>
+    <body>
+        <div class="formDiv" id="popUp" style="display:none">
+            <form>
+                <div class="formHeading">Student Detail Form</div><br>
+                <input type="text" id="Name" name="Name" placeholder="Name"><br id="special">
+
+                <input type="text" id="Department" name="department" placeholder="Department"><br id="special" style="margin-top: 15px;">
+
+                <div style="text-align: left; margin-left:30%">
+                
+                    <label id="f" class="yearLabel">Year</label><br id="special">
+
+                    <input type="radio" onclick="yearFunc(document.getElementById('firstYear').value)" id="firstYear" name="year" value="First Year" class="radioInput">
+                    <label for="firstYear" class="radioLabel">First Year</label><br>
+                    <input type="radio" onclick="yearFunc1()" id="secondYear" name="year" value="Second Year" class="radioInput">
+                    <label for="secondYear" class="radioLabel">Second Year</label><br>
+                    <input type="radio" id="thirdYear" name="year" value="Third Year" class="radioInput">
+                    <label for="thirdYear" class="radioLabel">Third Year</label><br>
+                    
+                </div><br>
+
+                <input type="text" id="College Name" placeholder="College Name"><br id="special">
+
+                <input type="tel"  pattern="[0-9]{10}" id="Phone Number" placeholder="Phone Number"><br id="special">
+
+                <input type="text" id="Email" placeholder="E-Mail ID"><br id="special">
+
+                <button onclick="func(document.getElementById('Name').value)">Click Me!</button>        
+                <input type="submit" onclick="sendData()">
+            </form>
+            <p id="Test"></p>
+        </div>
+        <button onclick="popupForm()">Click Me!</button>
+    </body>
+    <script>
+
+        function popupForm()
+        {
+            document.getElementById("popUp").style.display="flex";
+        }
+
+        let firstName="";
+        function func(firstName)
+        {
+            document.getElementById("Test").innerHTML = firstName;
+            console.log(firstName);
+        }
+
+        let year1;
+        function yearFunc(year1)
+        {
+            if(year1 == "First Year")
+                document.getElementById("f").innerHTML = "First Year";
+        }
+
+        function yearFunc1()
+        {
+            let year2 = document.getElementById("secondYear").value; //$('#secondYear').val();
+
+            //if(year2 == "First Year")
+                document.getElementById("f").innerHTML = year2;
+        }
+
+        function sendData()
+        {
+            let name = document.getElementById("Name").value;
+            let department = document.getElementById("Department").value;
+            //let year = document.getElementById("Year").value;
+            let collegeName = document.getElementById("College Name").value;
+            let phoneNumber = document.getElementById("Phone Number").value;
+            let email = document.getElementById("Email").value;
+            console.log(name + " " + department + " " + collegeName + " " + phoneNumber + " " + email)
+        }
+
+    </script>
+</html>

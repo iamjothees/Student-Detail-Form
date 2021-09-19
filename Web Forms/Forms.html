@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+    <head>
+        
+        <title>Basic Detail Form</title>
+        <script src="https://kit.fontawesome.com/c48297e282.js" crossorigin="anonymous"></script>
+        <script src="Form.js"></script>
+        <link rel="stylesheet" href="Forms.css">
+    </head>
+    <body style="background-color: aqua;">
+        <button onclick="openForm()">Open Form</button>
+        <div id="modal" class="modal">
+            <div class="formDiv">
+                
+                <form class="studentForm">
+                    <!-- <i class="closeForm" class="far fa-times-circle"></i> -->
+                    <!-- <button class="closeFormButton" onclick="closeForm()"><!-- <i class="far fa-window-close"></i> -/-> </button> -->
+                    <button class="closeFormButton" onclick="closeForm()"><!-- <i class="far fa-window-close"></i> --></button>
+                    <br><div class="formHeading">Student Detail Form</div><br>
+                    
+                    
+                    <input type="text" id="Name" name="Name" placeholder="Name"><br id="special">
+
+                    <input type="text" id="department" name="department" placeholder="Department"><br id="special" style="margin-top: 15px;">
+
+                    <div style="text-align: left; margin-left:30%">
+                    
+                        <!-- <label class="yearLabel">Year</label><br id="special"> -->
+
+                        <input type="radio" id="firstYear" name="year" value="First Year" class="yearInput">
+                        <label for="firstYear" class="yearLabel">First Year</label><br>
+                        <input type="radio" id="secondYear" name="year" value="Second Year" class="yearInput">
+                        <label for="secondYear" class="yearLabel">Second Year</label><br>
+                        <input type="radio" id="thirdYear" name="year" value="Third Year" class="yearInput">
+                        <label for="thirdYear" class="yearLabel">Third Year</label><br>
+                    </div><br>
+
+                    <input type="text" id="collegeName" placeholder="College Name"><br id="special">
+
+                    <input type="tel"  pattern="[0-9]{10}" id="phoneNumber" placeholder="Phone Number"><br id="special">
+
+                    <input type="text" id="email" placeholder="E-Mail ID"><br id="special">
+
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+        
+    </body>
+    <!-- <script>
+        if(year == "First Year")
+            document.getElementsByClassName("yearLabel").innerHTML = "First Year";
+    </script> -->
+</html>
